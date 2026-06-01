@@ -23,3 +23,6 @@ customers.push({
 });
 
 customers.shift();
+customers[0].email = "sohil.updated@email.com";
+
+customers[1].purchases.push("Wireless Headphones");
