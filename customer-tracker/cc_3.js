@@ -26,3 +26,9 @@ customers.shift();
 customers[0].email = "sohil.updated@email.com";
 
 customers[1].purchases.push("Wireless Headphones");
+customers.forEach(function(customer) {
+  console.log(`Name: ${customer.name}`);
+  console.log(`Email: ${customer.email}`);
+  console.log(`Total Purchases: ${customer.purchases.length}`);
+  console.log("----------------------");
+});
