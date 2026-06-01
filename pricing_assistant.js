@@ -7,3 +7,8 @@ let fixedMonthlyCosts = 500.00;
 let discountedPrice = basePrice * (1 - discountRate);
 let finalPriceWithTax = discountedPrice * (1 + salesTaxRate);
 let profitPerUnit = finalPriceWithTax - costPerUnit;
+let breakEvenUnits = profitPerUnit > 0
+    ? Math.ceil(fixedMonthlyCosts / profitPerUnit)
+    : "Not profitable";
+
+let isProfitablePerUnit = profitPerUnit > 0;
