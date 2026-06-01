@@ -1,8 +1,8 @@
 // Step 1: Create and Initialize Variables
-let productName = "Wireless Mouse";
+let productName = "Running Shoes";
 
-let costPerUnit = 12.50;
-let basePrice = 19.99;
+let costPerUnit = 45.00;
+let basePrice = 79.99;
 let discountRate = 0.15; // 15% discount
 let salesTaxRate = 0.07; // 7% sales tax
 let fixedMonthlyCosts = 500.00;
@@ -11,7 +11,12 @@ let fixedMonthlyCosts = 500.00;
 let discountedPrice = basePrice * (1 - discountRate);
 let finalPriceWithTax = discountedPrice * (1 + salesTaxRate);
 let profitPerUnit = finalPriceWithTax - costPerUnit;
-let breakEvenUnits = Math.ceil(fixedMonthlyCosts / profitPerUnit);
+
+// Guard condition: only calculate break-even if profitable
+let breakEvenUnits = profitPerUnit > 0
+    ? Math.ceil(fixedMonthlyCosts / profitPerUnit)
+    : "Not profitable";
+
 let isProfitablePerUnit = profitPerUnit > 0;
 
 // Step 3: Print to Console
